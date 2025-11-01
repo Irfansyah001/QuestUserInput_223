@@ -2,4 +2,5 @@
     <string name="app_name">Input Pengguna</string>
     <string name="submit">Submit</string>
     <string name="formulirPendaftara">Formulir Pendaftaran</string>
+    <string name="namaLengkap">Nama Lengkap</string>
 </resources>
