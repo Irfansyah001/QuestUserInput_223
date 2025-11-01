@@ -120,11 +120,42 @@ fun FormDataDiri(modifier: Modifier) {
                             )
                             .height(30.dp)
                             .padding(horizontal = 20.dp),
-                        verticalAlignment = Alignment.CenterVertically) {
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
                         RadioButton(
                             selected = textJK == item,
                             onClick = {
                                 textJK = item
+                            })
+                        Text(item)
+                    }
+                }
+            }
+
+            Text(
+                modifier = Modifier.padding(top = 15.dp, start = 20.dp),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+                text = stringResource(id = R.string.statusPerkawinan),
+            )
+
+            Column {
+                status.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .selectable(
+                                selected = textSP == item,
+                                onClick = { textSP = item }
+                            )
+                            .height(30.dp)
+                            .padding(horizontal = 20.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textSP == item,
+                            onClick = {
+                                textSP = item
                             })
                         Text(item)
                     }
