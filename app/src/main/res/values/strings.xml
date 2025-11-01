@@ -5,4 +5,5 @@
     <string name="namaLengkap">Nama Lengkap</string>
     <string name="jenisKelamin">Jenis Kelamin</string>
     <string name="statusPerkawinan">Status Perkawinan</string>
+    <string name="alamat">Alamat</string>
 </resources>
