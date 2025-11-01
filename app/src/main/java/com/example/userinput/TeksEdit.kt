@@ -55,12 +55,14 @@ fun FormDataDiri(modifier: Modifier) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Card(
             modifier = Modifier
                 .width(400.dp)
                 .height(100.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black)
         ) {
+
             Text(
                 modifier = Modifier.padding(top = 35.dp, start = 50.dp),
                 fontSize = 30.sp,
@@ -78,6 +80,7 @@ fun FormDataDiri(modifier: Modifier) {
             colors = CardDefaults.cardColors(containerColor = Color.White),
             border = BorderStroke(5.dp, Color.Black)
         ) {
+
             Text(
                 modifier = Modifier.padding(top = 15.dp, start = 20.dp),
                 fontSize = 20.sp,
@@ -85,25 +88,39 @@ fun FormDataDiri(modifier: Modifier) {
                 color = Color.Black,
                 text = stringResource(id = R.string.namaLengkap),
             )
+
             OutlinedTextField(
                 value = textNama,
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier
                     .padding(horizontal = 20.dp)
-                    .width(width = 250.dp),
-                label = { Text(text = "Nama Lengkap") },
+                    .width(width = 350.dp),
+                label = { Text(text = "Isi Nama Lengkap") },
                 onValueChange = {
                     textNama = it
                 }
             )
-            Row {
+
+            Text(
+                modifier = Modifier.padding(top = 15.dp, start = 20.dp),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+                text = stringResource(id = R.string.jenisKelamin),
+            )
+
+            Column {
                 gender.forEach { item ->
                     Row(
-                        modifier = Modifier.selectable(
+                        modifier = Modifier
+                            .selectable(
                             selected = textJK == item,
                             onClick = { textJK = item }
-                        ), verticalAlignment = Alignment.CenterVertically) {
+                            )
+                            .height(30.dp)
+                            .padding(horizontal = 20.dp),
+                        verticalAlignment = Alignment.CenterVertically) {
                         RadioButton(
                             selected = textJK == item,
                             onClick = {
@@ -113,6 +130,7 @@ fun FormDataDiri(modifier: Modifier) {
                     }
                 }
             }
+
             OutlinedTextField(
                 value = textAlamat,
                 singleLine = true,
@@ -122,6 +140,7 @@ fun FormDataDiri(modifier: Modifier) {
                     textAlamat = it
                 }
             )
+
             HorizontalDivider(
                 modifier = Modifier.padding(
                     bottom = dimensionResource(R.dimen.padding_medium),
@@ -132,6 +151,7 @@ fun FormDataDiri(modifier: Modifier) {
                 thickness = dimensionResource(R.dimen.divider_tipis),
                 color = Color.DarkGray
             )
+
             Button(
                 modifier = Modifier
                     .padding(bottom = 25.dp).fillMaxWidth(1f),
@@ -164,6 +184,7 @@ fun FormDataDiri(modifier: Modifier) {
                     .height(100.dp)
                     .width(300.dp)
             ) {
+
                 Column(
                     modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),
                 )
