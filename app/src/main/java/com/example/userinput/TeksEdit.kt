@@ -1,14 +1,17 @@
 package com.example.userinput
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
@@ -26,7 +29,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -44,10 +49,23 @@ fun FormDataDiri(modifier: Modifier) {
     val status: List<String> = listOf("Janda", "Lajang", "Duda")
 
     Column(
-        modifier = modifier.padding(top = 50.dp),
+        modifier = modifier.padding(top = 15.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Card (modifier = Modifier
+            .width(400.dp)
+            .height(100.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black)
+        ){
+            Text(
+                modifier = Modifier.padding(top =35.dp, start = 50.dp),
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                text = stringResource(id = R.string.formulirPendaftara),
+            )
+        }
         OutlinedTextField(
             value = textNama,
             singleLine = true,
@@ -94,7 +112,8 @@ fun FormDataDiri(modifier: Modifier) {
             color = Color.DarkGray
         )
         Button(
-            modifier = Modifier.fillMaxWidth(1f),
+            modifier = Modifier
+                .padding(bottom = 25.dp).fillMaxWidth(1f),
             enabled = textAlamat.isNotEmpty(),
             onClick = {
                 nama = textNama
